@@ -39,6 +39,6 @@ def cari(input, list_yg_dicari = list_barang.list,printIndex = False):
     for i,x in enumerate(list_yg_dicari):
         if (str(x[0]) == input) or (x[1] == input) : 
             if(printIndex):
-                return i
+                return [i,x]
             return x
     return False

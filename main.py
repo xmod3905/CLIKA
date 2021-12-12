@@ -8,15 +8,17 @@ YangDibeli = []
 
 os.system("clear")
 
-# def cek_duplikasi(triger):
-#     if len(triger) > 0:
-#         hasil = barang.cari(triger[0],YangDibeli, True)
-#         if hasil:
-#             YangDibeli.pop(2)
-#             triger.pop(3)
-#             # triger.append(int(triger[3]) + int(hasil[3])) 
-#             return triger
-#     return triger
+def cek_duplikasi(triger):
+    if int(len(YangDibeli)) > 0 :
+        hasil = barang.cari(str(triger[0]),YangDibeli, True)
+        if hasil:
+            YangDibeli.pop(hasil[0])
+            kuntitas = triger[3]
+            triger.pop(3)
+            kuntitas = int(kuntitas) + int(hasil[1][3])
+            triger[3] = kuntitas
+            return triger
+    return triger
 
 def handel_pilihan_kustom():
     dataKustom = ["===Kustom!==="]
@@ -34,8 +36,8 @@ def handel_pilihan_basis_data():
     if hasilPencarian:
         kuantitasBarang = int(input("Berapa banyak yang dibeli?"))
         hasilPencarian.append(kuantitasBarang)
-        # YangDibeli.append(cek_duplikasi(hasilPencarian))
-        YangDibeli.append(hasilPencarian)
+        YangDibeli.append(cek_duplikasi(hasilPencarian))
+        # YangDibeli.append(hasilPencarian)
     else: 
         print("Maaf barang tidak terdaftar di basis data.")
         handel_pilihan_basis_data()
