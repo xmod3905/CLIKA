@@ -55,5 +55,6 @@ def build(list_barang, yangDibayarkan = 0):
             kembalian*=(-1)
             msg = "Hutang"
         print(rapikan(msg, 20, "kiri"),":", "Rp.",rapikan(locale.format_string("%d", kembalian, grouping=True), 15, "kanan")+ ",-")
+        print(rapikan("==Transaksi Selesai==", len(header)))
     else:
         print("Total bayar sementara:","Rp.", locale.format_string("%d", totalBayar, grouping=True)+ ",-")

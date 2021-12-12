@@ -22,19 +22,19 @@ def cek_duplikasi(triger):
 
 def handel_pilihan_kustom():
     dataKustom = ["===Kustom!==="]
-    namaBarang = input("Apa nama barangnya?")
-    hargaBarang = int(input("Berapa harga barangnya?"))
-    kuantitasBarang = int(input("Berapa banyak yang dibeli?"))
+    namaBarang = input("Apa nama barangnya?\n")
+    hargaBarang = int(input("Berapa harga barangnya?\n"))
+    kuantitasBarang = float(input("Berapa banyak yang dibeli?\n"))
     dataKustom.append(namaBarang)
     dataKustom.append(hargaBarang)
     dataKustom.append(kuantitasBarang)
     YangDibeli.append(dataKustom)
 
 def handel_pilihan_basis_data():
-    indeksPencarian = input("Masukan Nama Barang / ID-nya!")
+    indeksPencarian = input("Masukan Nama Barang / ID-nya!\n")
     hasilPencarian = barang.cari(indeksPencarian)
     if hasilPencarian:
-        kuantitasBarang = int(input("Berapa banyak yang dibeli?"))
+        kuantitasBarang = float(input("Berapa banyak yang dibeli?\n"))
         hasilPencarian.append(kuantitasBarang)
         YangDibeli.append(cek_duplikasi(hasilPencarian))
         # YangDibeli.append(hasilPencarian)
@@ -43,12 +43,28 @@ def handel_pilihan_basis_data():
         handel_pilihan_basis_data()
 
 def penambahan_barang():
-    tipeInput = input("Cari barang atau masukan kustom?\n(Cari isi 1, kustom isi 0)")
+    tipeInput = input("Cari barang atau masukan kustom?\n(Cari isi 1, kustom isi 0)\n")
     if(int(tipeInput) == 1):
         handel_pilihan_basis_data()
     else: 
         handel_pilihan_kustom()
     ui.build(YangDibeli)
+def tambahAkhiri():
+    kataTAA = "Lanjut menambahakan barang(1) atau akhiri(0)?\n"
+    tambahAtauAkhiri = int(input(kataTAA))
+    while tambahAtauAkhiri == 1:
+        penambahan_barang()
+        tambahAtauAkhiri = int(input(kataTAA))
+    if len(YangDibeli) < 1:
+        utama()
+    dihapus = int(input("Apa yang mau dihapus?\n(masukan 0 bila tidak ada)\n"))
+    if dihapus > 0:
+        YangDibeli.pop(dihapus-1)
+        ui.build(YangDibeli)
+        return tambahAkhiri()
+    uangYgDibayar = int(input("Berapa uang yang dibayarkan?\n"))
+    ui.build(YangDibeli,uangYgDibayar)
+    return 0
 
 def utama():
     print("Selamat Datang!")
@@ -58,14 +74,6 @@ def utama():
     print("(5312421026)")
     print("="*30)
     penambahan_barang()
-    kataTAA = "Lanjut menambahakan barang(1) atau akhiri(0)?"
-    tambahAtauAkhiri = int(input(kataTAA))
-    while tambahAtauAkhiri == 1:
-        penambahan_barang()
-        tambahAtauAkhiri = int(input(kataTAA))
-    if len(YangDibeli) < 1:
-        utama()
-    uangYgDibayar = int(input("Berapa uang yang dibayarkan?"))
-    ui.build(YangDibeli,uangYgDibayar)
+    tambahAkhiri()
 
 utama()
