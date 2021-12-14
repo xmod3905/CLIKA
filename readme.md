@@ -22,9 +22,21 @@ menjadi:
 
 ## Cara menjalankan
 
-Buka terminal/cmd, pindakan directori kedirektori ini, dan tulisakan :
+Clone* ripositori ini:
+```
+git clone https://github.com/xmod3905/CLIKA
+``` 
+
+*Pastikan kamu sudah menginstall git di perangkatmu
+
+atau [Unduh](https://github.com/xmod3905/CLIKA/archive/refs/heads/main.zip) ripositori ini dan ekstrak
+
+Setelah selesai `clone` / `download` repositori ini buka terminal/cmd, pindakan directori ke direktori ini, dan tulisakan :
 
 ```
  python main.py
 ```
 
+## List Barang
+Semua list barang tersimpan dalam file [barang.py](https://github.com/xmod3905/CLIKA/blob/main/barang.py)
+anda dapat merubahnya di variable `list` di dalam class ``list_barang`` 
