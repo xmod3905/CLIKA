@@ -31,7 +31,7 @@ git clone https://github.com/xmod3905/CLIKA
 
 atau [Unduh](https://github.com/xmod3905/CLIKA/archive/refs/heads/main.zip) ripositori ini dan ekstrak
 
-Setelah selesai `clone` / `download` repositori ini buka terminal/cmd, pindakan directori ke direktori ini, dan tulisakan :
+Setelah selesai `clone` / `download` repositori ini buka terminal/cmd, pindakan directori ke direktori ini, dan tulisakan
 
 ```
  python main.py
