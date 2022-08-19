@@ -9,17 +9,6 @@ CLIKA adalah mesin kasir yang berbasiskan CLI yang ditulis dalam Bahasa Python y
 * Windows*, Linux or MacOS
 * Python  
 
-*dapat bejalan di windows tetapi beberapa fungsi tidak berjalan atau anda dapat mengubah setiap
-
-```
- os.system("clear")
-```
-menjadi:
-
-```
- os.system("cls")
-```
-
 ## Cara menjalankan
 
 Clone* ripositori ini:

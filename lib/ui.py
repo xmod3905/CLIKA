@@ -1,6 +1,12 @@
-import os
-import locale
+import os, locale, platform
 locale.setlocale(locale.LC_ALL, '')
+
+def clearCli():
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+
 def penambahNol(input):
     input = str(input)
     panjang_input = len(input)
@@ -22,7 +28,7 @@ def rapikan(input, panjang_tempat, tipe = "tengah"):
     return pembuatSepasi(selisih)+input+pembuatSepasi(selisih)
     
 def build(list_barang, yangDibayarkan = 0):
-    os.system("clear")
+    clearCli()
     header = "||"+rapikan("No", 6)+"|"+rapikan("ID Barang", 13)+"|"+rapikan("Nama Barang", 25)+"|"+rapikan("Harga Satuan", 16)+"|"+rapikan("Kuantitas Barang", 20)+"|"+rapikan("Total Harga", 15)+"||"
     print(rapikan("MESIN KASIR BASIS CLI 'CLIKAS'", len(header)))
     print(rapikan("Dibuat oleh", len(header)))

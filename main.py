@@ -6,7 +6,7 @@ YangDibeli = []
 
 # Bug cek_duplikasi
 
-os.system("clear")
+ui.clearCli()
 
 def cek_duplikasi(triger):
     if int(len(YangDibeli)) > 0 :
